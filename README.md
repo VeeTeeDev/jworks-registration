@@ -29,9 +29,15 @@ package.json:
     "karma-typescript-preprocessor": "0.0.21",
     "karma-webpack": "^1.7.0"
 ```
+and
+
+```javascript
+    npm install
+```
+
 
 or alternative:
 ```javascript
-    npm install jasmine
+    npm install jasmine --save-dev
     ...
 ```
