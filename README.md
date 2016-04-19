@@ -27,7 +27,8 @@ package.json:
     "karma-mocha-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-typescript-preprocessor": "0.0.21",
-    "karma-webpack": "^1.7.0"
+    "karma-webpack": "^1.7.0",
+    "phantomjs-prebuilt": "^2.1.7"
 ```
 and
 
@@ -45,3 +46,4 @@ or alternative:
 Branch adding-karma-script:
 
 Branch adding-basic-test:
+https://github.com/johnpapa/angular-styleguide
