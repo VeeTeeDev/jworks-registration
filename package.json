@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "typings i",
     "server:dev": "webpack-dev-server --config config/webpack.config.js --inline --content-base src/",
-    "start": "npm run server:dev"
+    "start": "npm run server:dev",
+    "test": "karma start config/karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -27,13 +28,6 @@
     "awesome-typescript-loader": "^0.17.0-rc.4",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.15.0",
-    "node-sass": "^3.4.2",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^3.2.0",
-    "style-loader": "^0.13.1",
-    "typescript": "^1.8.9",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
@@ -41,7 +35,16 @@
     "karma-mocha-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-typescript-preprocessor": "0.0.21",
-    "karma-webpack": "^1.7.0"
+    "karma-webpack": "^1.7.0",
+    "node-sass": "^3.4.2",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.7",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "angular": "^1.5.3"

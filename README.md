@@ -47,3 +47,12 @@ Branch adding-karma-script:
 
 Branch adding-basic-test:
 https://github.com/johnpapa/angular-styleguide
+
+unmet dependecies ?
+```
+    npm install phantomjs --save-dev
+```
+and again
+```
+    npm install phantomjs--prebuilt --save-dev
+```
