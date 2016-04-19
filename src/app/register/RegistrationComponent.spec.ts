@@ -1,25 +1,34 @@
-import {RegistrationComponent} from "./RegistrationComponent";
+import {RegistrationComponent, RegistrationController} from "./RegistrationComponent";
+import IAugmentedJQuery = angular.IAugmentedJQuery;
+import {APP_MODULE_NAME} from "../AppModule";
+import IScope = angular.IScope;
 var jqry = require('jquery');
 
 describe('Registration component', ()=> {
     var compile, scope;
+    var rootScope;
+
+    beforeEach(angular.mock.module(APP_MODULE_NAME));
+
     beforeEach(angular.mock.inject(($compile, $rootScope) => {
-       compile = $compile;
-       scope = $rootScope.$new();
-   }));
+        rootScope = $rootScope;
+        compile = $compile;
+        scope = $rootScope.$new();
+    }));
 
     var registrationTestComponent:RegistrationComponent = new RegistrationComponent();
 
-    it('Exist', function() {
-        expect(registrationTestComponent).toBeDefined();;
+
+    it('Exist', function () {
+        expect(registrationTestComponent).toBeDefined();
     });
 
-    it('Template defined', function() {
-      // console.log(registrationTestComponent.template);
+    it('Template defined', function () {
+        // console.log(registrationTestComponent.template);
         expect(registrationTestComponent.template).toBeDefined();
-     });
+    });
 
-     it('Elements defined', function() {
+    it('Elements defined', function () {
         //  scope.username = 'TiVi';
         //  scope.password = 'P@ssw0rd';
         //  scope.email = 'TiVi@ordina.be';
@@ -30,39 +39,43 @@ describe('Registration component', ()=> {
         //  or use the standard DOM APIs, e.g. document.querySelectorAll().
 
 
-         var el = getCompiledElement(undefined);
-         var form = el.find('form');
-         var inputs = el.find('input');
+        var el = getCompiledElement(undefined);
+        var form = el.find('form');
+        var inputs = el.find('input');
 
-         var element = jqry(el);
-         var useremail = element.find('.js-useremail');
-         var username = element.find('.js-username');
-         var userpassword = element.find('.js-userpassword');
+        var element = jqry(el);
+        var useremail = element.find('.js-useremail');
+        var username = element.find('.js-username');
+        var userpassword = element.find('.js-userpassword');
 
         //  console.log(useremail);
         //  console.log(username);
         //  console.log(userpassword);
-         //
+        //
         //  console.log(useremail.length);
         //  console.log(username.length);
         //  console.log(userpassword.length);
 
         console.log(username.val());
 
-         expect(form.length).toBeGreaterThan(0);
-         expect(useremail.length).toBeGreaterThan(0);
-         expect(username.length).toBeGreaterThan(0);
-         expect(userpassword.length).toBeGreaterThan(0);
+        expect(form.length).toBeGreaterThan(0);
+        expect(useremail.length).toBeGreaterThan(0);
+        expect(username.length).toBeGreaterThan(0);
+        expect(userpassword.length).toBeGreaterThan(0);
 
-      });
+    });
 
-      function getCompiledElement(template){
+    function getCompiledElement(template) {
         var template = template || registrationTestComponent.template;
         var element = angular.element(registrationTestComponent.template);
 
-        var compiledElement = compile(element)(scope);
+        var scope = rootScope.$new();
+        var compiledElement:IAugmentedJQuery = compile('<register></register>')(scope);
         scope.$digest();
+        var scpe:IScope = compiledElement.scope();
+        var isolateScope:IScope = compiledElement.isolateScope();
+        var ctrl:RegistrationController = isolateScope['$ctrl'];
         return compiledElement;
-      }
+    }
 
 });

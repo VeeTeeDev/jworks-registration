@@ -7,7 +7,8 @@
     "postinstall": "typings i",
     "server:dev": "webpack-dev-server --config config/webpack.config.js --inline --content-base src/",
     "start": "npm run server:dev",
-    "test": "karma start config/karma.conf.js"
+    "test": "karma start config/karma.conf.js",
+    "watch:test": "karma start config/karma.conf.js --auto-watch --no-single-run --NODE_ENV=test"
   },
   "repository": {
     "type": "git",
