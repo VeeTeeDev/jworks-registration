@@ -1,4 +1,4 @@
-import {RegistrationComponent, RegistrationController} from "./RegistrationComponent";
+import {RegistrationComponent, RegistrationController, ICredentials} from "./RegistrationComponent";
 import IAugmentedJQuery = angular.IAugmentedJQuery;
 import {APP_MODULE_NAME} from "../AppModule";
 import IScope = angular.IScope;
@@ -7,6 +7,8 @@ var jqry = require('jquery');
 describe('Registration component', ()=> {
     var compile, scope;
     var rootScope;
+    var ctrl:RegistrationController;
+    var isolateScope:IScope;
 
     beforeEach(angular.mock.module(APP_MODULE_NAME));
 
@@ -58,6 +60,13 @@ describe('Registration component', ()=> {
 
         console.log(username.val());
 
+        console.log("before " + ctrl.user.email);
+        ctrl.user.email = "reyan@mail.be";
+        ctrl.onChange({},'useremail');
+        isolateScope.$digest();
+        console.log("after " + ctrl.user.email);
+        console.log('names' + ctrl.user.username);
+
         expect(form.length).toBeGreaterThan(0);
         expect(useremail.length).toBeGreaterThan(0);
         expect(username.length).toBeGreaterThan(0);
@@ -72,9 +81,11 @@ describe('Registration component', ()=> {
         var scope = rootScope.$new();
         var compiledElement:IAugmentedJQuery = compile('<register></register>')(scope);
         scope.$digest();
+
         var scpe:IScope = compiledElement.scope();
-        var isolateScope:IScope = compiledElement.isolateScope();
-        var ctrl:RegistrationController = isolateScope['$ctrl'];
+        isolateScope = compiledElement.isolateScope();
+        ctrl = isolateScope['$ctrl'];
+
         return compiledElement;
     }
 
