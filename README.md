@@ -41,3 +41,5 @@ or alternative:
     npm install jasmine --save-dev
     ...
 ```
+
+Branch adding-karma-script:
