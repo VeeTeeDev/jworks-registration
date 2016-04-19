@@ -1,0 +1,41 @@
+{
+  "name": "jworks-registration",
+  "version": "0.1.0",
+  "description": "A small webapp for user registration with basic testing",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "typings i",
+    "server:dev": "webpack-dev-server --config config/webpack.config.js --inline --content-base src/",
+    "start": "npm run server:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeeTeeDev/jworks-registration.git"
+  },
+  "author": "Ryan De Gruyter, Dimitri De Kerf, Tim Vierbergen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeeTeeDev/jworks-registration/issues"
+  },
+  "homepage": "https://github.com/VeeTeeDev/jworks-registration#readme",
+  "devDependencies": {
+    "angular-animate": "^1.5.3",
+    "angular-aria": "^1.5.3",
+    "angular-material": "^1.0.7",
+    "angular-messages": "^1.5.3",
+    "angular-mocks": "^1.5.3",
+    "awesome-typescript-loader": "^0.17.0-rc.4",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.15.0",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.3"
+  }
+}
