@@ -1,0 +1,18 @@
+app{
+  h1{
+    color: orange;
+  }
+}
+
+md-toolbar:not(.md-menu-toolbar){
+    background-color: white;
+    border-bottom: black 1px solid;
+}
+body{
+    background: url(/img/code.jpg);
+}
+.register-body{
+    margin: auto;
+    width: 500px;
+    padding-top: 100px;
+}
