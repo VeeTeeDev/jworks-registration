@@ -5,7 +5,7 @@
             <md-input-container class="md-icon-float md-block">
                 <label>Email</label>
                 <md-icon md-svg-icon="com:email"></md-icon>
-                <input required
+                <input class="js-useremail" required
                        ng-model="$ctrl.user.email"
                        ng-change="$ctrl.onChange(this, 'useremail')"
                        ng-pattern="/ordina.be/"
@@ -19,7 +19,7 @@
             <md-input-container class="md-icon-float md-block">
                 <label>Username</label>
                 <md-icon></md-icon>
-                <input ng-change="$ctrl.onChange(this, 'username')"
+                <input class="js-username" ng-change="$ctrl.onChange(this, 'username')"
                        required
                        minlength="4"
                        maxlength="20"
@@ -35,7 +35,7 @@
             <md-input-container class="md-block">
                 <label>Password</label>
                 <md-icon></md-icon>
-                <input required
+                <input class="js-userpassword" required
                        minlength="8"
                        ng-change="$ctrl.onChange(this, 'password')"
                        ng-model="$ctrl.user.password" name="password" type="password">
